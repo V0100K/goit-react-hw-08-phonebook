@@ -7,6 +7,7 @@ const styles = {
     },
 };
 
+// поля рагистрации и входа подкл в AppBar
 export default function AuthNav() {
     return (
         <div>

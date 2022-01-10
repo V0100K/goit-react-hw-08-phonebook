@@ -1,16 +1,28 @@
-.contactListItem {
-  display: flex;
-  justify-content: space-between;
-}
 
+
+.contactListItem {
+/*display: flex;*/
+    /*justify-content:space-around;*/
+list-style: none;
+
+
+}
 .contactListItem:not(:last-child) {
-  margin-bottom: 15px;
+    margin-bottom: 10px;
+
 }
 
 .contact {
-  margin: 0;
+    justify-content:center;
+    color: #e2de05;
+    font-weight: bold;
+    font-size: 22px;
+
 }
 .buttonDelete{
-  background-color: #f16262;
+
+    background-color: #f16262;
   border-radius: 10px;
+    margin: 0 auto;
+
 }

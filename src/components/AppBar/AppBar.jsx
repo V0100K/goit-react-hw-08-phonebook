@@ -5,6 +5,7 @@ import AuthNav from '../AuthNav/AuthNav';
 import { authSelectors } from '../../redux/auth';
 import { Navbar } from 'react-bootstrap';
 
+// стили входа и лога
 const styles = {
     header: {
         display: 'flex',
@@ -19,6 +20,7 @@ export default function AppBar() {
     return (
         <Navbar bg="primary" variant="dark" style={styles.header}>
             <Navigation />
+            {/*// если залогинен отобразить "UserMenu" если нет "AuthNav"*/}
             {isLoggedIn ? <UserMenu /> : <AuthNav />}
         </Navbar>
     );

@@ -5,6 +5,7 @@ axios.defaults.baseURL = "https://connections-api.herokuapp.com";
 
 const token = {
     set(token) {
+        // общий заголовок авторизации
         axios.defaults.headers.common.Authorization = `Bearer ${token}`;
     },
     unset() {
@@ -12,6 +13,7 @@ const token = {
     },
 };
 
+// регистрация
 const register = createAsyncThunk('auth/register', async credentials => {
     try {
         console.log('credentials ', credentials);
@@ -25,6 +27,7 @@ const register = createAsyncThunk('auth/register', async credentials => {
     }
 });
 
+// вход
 const logIn = createAsyncThunk('auth/login', async credentials => {
     try {
         const { data } = await axios.post('/users/login', credentials);

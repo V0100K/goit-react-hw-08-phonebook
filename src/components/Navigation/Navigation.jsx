@@ -10,6 +10,7 @@ const styles = {
         color: '#ffc107',
     },
 };
+// Home и Contacts подкл в AppBar
 
 const Navigation = () => {
     const isLoggedIn = useSelector(authSelectors.getIsLoggedIn);

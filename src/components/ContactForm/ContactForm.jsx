@@ -11,29 +11,29 @@ const ContactForm = () => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
 
-    const handleChange = e => {
-        const { name, value } = e.target;
-        switch (name) {
-            case 'name':
-                setName(value);
-                return;
+    // const handleChange = e => {
+    //     const { name, value } = e.target;
+    //     switch (name) {
+    //         case 'name':
+    //             setName(value);
+    //             return;
+    //
+    //         case 'number':
+    //             setNumber(value);
+    //             return;
+    //
+    //         default:
+    //             return;
+    //     }
+    // };
 
-            case 'number':
-                setNumber(value);
-                return;
-
-            default:
-                return;
-        }
-    };
-
-    const findByName = contactName => {
-        return contacts.some(({ name }) => name === contactName);
-    };
-
-    const findByNumber = contactNumber => {
-        return contacts.some(({ number }) => number === contactNumber);
-    };
+    // const findByName = contactName => {
+    //     return contacts.some(({ name }) => name === contactName);
+    // };
+    //
+    // const findByNumber = contactNumber => {
+    //     return contacts.some(({ number }) => number === contactNumber);
+    // };
 
     const reset = () => {
         setName('');
@@ -42,12 +42,18 @@ const ContactForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
-        if (findByName(name) && findByNumber(number)) {
-            alert(`${name} is already in contacts!`);
-        } else {
-            dispatch(addContact({ name, number }));
+        if (
+            contacts.some((item) => {
+                return item.name.toLowerCase() === name.toLowerCase();
+            })
+        ) {
+            alert(`${name} is already in contacts`);
+
         }
-        reset();
+        else {
+            dispatch(addContact({ name, number }));
+            reset();
+        }
     };
 
     return (
@@ -63,8 +69,9 @@ const ContactForm = () => {
                         required
                         value={name}
                         className={s.own}
-
-                        onChange={handleChange}
+                        onChange={e => {
+                        setName(e.currentTarget.value);
+                    }}
                     />
                 </Form.Label>
             </Form.Group>
@@ -79,7 +86,9 @@ const ContactForm = () => {
                         required
                         value={number}
                         className={s.own}
-                        onChange={handleChange}
+                        onChange={e => {
+                            setNumber(e.currentTarget.value);
+                        }}
                     />
                 </Form.Label>
             </Form.Group>

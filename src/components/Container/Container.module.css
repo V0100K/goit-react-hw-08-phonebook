@@ -1,13 +1,22 @@
 .container {
-    max-width: 1440px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    color: #2a2a2a;
-    background: radial-gradient(
-            circle,
-            rgba(22, 130, 202, 0.74) 19%,
-            rgba(106, 154, 209, 0.74) 100%
-    );
+
+    background-image:
+            linear-gradient(to top, rgba(109, 74, 74, 0.3), rgba(118, 103, 45, 0.66)),
+            url(../../bg-phone.jpg);
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    text-align: center;
+    -moz-background-size: 100%; /* Firefox 3.6+ */
+    -webkit-background-size: 100%; /* Safari 3.1+ и Chrome 4.0+ */
+    -o-background-size: 100%; /* Opera 9.6+ */
+    background-size: 100%; /* Современные браузеры */
+
+    min-height: calc(100vh - 15px);
+border-color: black;
+
+border-radius: 15px;
+box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%), 0 18px 10px 12px rgb(0 0 0 / 14%),
+  0 18px 10px -1px rgb(0 0 0 / 20%);
+/*margin: 120px auto;*/
+
 }

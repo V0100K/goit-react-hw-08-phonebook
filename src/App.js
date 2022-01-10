@@ -8,6 +8,8 @@ import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
 import { authOperations, authSelectors } from './redux/auth';
 
+//q1w2e3r4t5y6u7
+
 const HomePage = lazy(() => import('./pages/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
@@ -24,7 +26,7 @@ export default function App() {
     return (
         <Container>
             {isFetchingCurrentUser ? (
-                <h1>Показываем React Skeleton</h1>
+                <h1>React Skeleton</h1>
             ) : (
                 <>
                     <AppBar />
