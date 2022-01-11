@@ -13,6 +13,7 @@ import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth';
 import { reducerContacts } from './contacts/contactsReducer';
 
+
 const middleware = [
     ...getDefaultMiddleware({
         serializableCheck: {
