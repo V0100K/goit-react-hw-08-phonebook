@@ -2,7 +2,7 @@
   "name": "goit-react-hw-08-phonebook",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://V0100K.github.io/goit-react-hw-02-feedback",
+
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
     "@testing-library/jest-dom": "^5.14.1",
@@ -27,7 +27,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "netlify deploy -p",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
